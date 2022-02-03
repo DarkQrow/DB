@@ -1,0 +1,4 @@
+.textField {
+    -fx-text-fill: #FF0000;
+    -fx-prompt-text-fill: #FF0000;
+}

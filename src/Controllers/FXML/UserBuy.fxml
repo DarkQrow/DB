@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserBuyController">
+   <children>
+      <ImageView fitHeight="450.0" fitWidth="720.0">
+         <image>
+            <Image url="@../../Materials/ПользовательПокупка.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="Ticket_Table" layoutX="34.0" layoutY="116.0" prefHeight="298.0" prefWidth="548.0" visible="false" />
+      <Button fx:id="Find_Button" layoutX="589.0" layoutY="48.0" mnemonicParsing="false" onAction="#FindTickets" prefHeight="47.0" prefWidth="106.0" stylesheets="@../../Materials/Button.css" text="Искать">
+         <font>
+            <Font name="Comic Sans MS Bold" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="From_Text" layoutX="86.0" layoutY="48.0" prefHeight="46.0" prefWidth="228.0" promptText="Откуда" />
+      <TextField fx:id="To_Text" layoutX="328.0" layoutY="48.0" prefHeight="46.0" prefWidth="228.0" promptText="Куда" />
+      <Button fx:id="Brone_Button" layoutX="597.0" layoutY="366.0" mnemonicParsing="false" onAction="#BroneTicket" prefHeight="47.0" prefWidth="106.0" stylesheets="@../../Materials/Button.css" text="Бронировать">
+         <font>
+            <Font name="Comic Sans MS Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="Bucket_Button" layoutX="640.0" layoutY="14.0" mnemonicParsing="false" onAction="#BucketChoose" stylesheets="@../../Materials/Button.css" text="Меню">
+         <font>
+            <Font name="Comic Sans MS Bold" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="50.0" fitWidth="200.0" layoutY="2.0">
+         <image>
+            <Image url="@../../Materials/Name.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="TRYAGAIN" layoutX="148.0" layoutY="103.0" prefHeight="26.0" prefWidth="388.0" text="Задайте хотя бы одно значение для поиска" textFill="RED" visible="false">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="629.0" layoutY="108.0" prefHeight="18.0" prefWidth="42.0" text="Класс" textAlignment="CENTER" textFill="#0015ff">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="Class_Choice_E" layoutX="614.0" layoutY="136.0" mnemonicParsing="false" selected="true" text="Эконом" textFill="#0101ff">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="Class_Choice_C" layoutX="614.0" layoutY="165.0" mnemonicParsing="false" selected="true" text="Комфорт" textFill="#0101ff">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="Class_Choice_B" layoutX="615.0" layoutY="196.0" mnemonicParsing="false" selected="true" text="Бизнес" textFill="#0101ff">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </CheckBox>
+      <Label layoutX="608.0" layoutY="225.0" prefHeight="20.0" prefWidth="93.0" text="День вылета" textAlignment="CENTER" textFill="#0015ff">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="DataChoose" layoutX="589.0" layoutY="252.0" prefHeight="26.0" prefWidth="115.0" promptText="Выберите дату" />
+      <Label fx:id="TIMEWRONG" layoutX="519.0" layoutY="290.0" prefHeight="61.0" prefWidth="190.0" text="Выберите нормальную дату, &#10;человечество еще не прак-&#10;тикует путешествия во времени" textAlignment="JUSTIFY" textFill="RED" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="601.0" layoutY="281.0" prefHeight="20.0" prefWidth="106.0" text="Месяц вылета" textAlignment="CENTER" textFill="#0015ff">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="MonthChooser" layoutX="589.0" layoutY="321.0" prefHeight="26.0" prefWidth="115.0" />
+   </children>
+</AnchorPane>

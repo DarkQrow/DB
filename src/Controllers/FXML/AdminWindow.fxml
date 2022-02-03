@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="477.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminWindowController">
+   <children>
+      <ImageView fitHeight="489.0" fitWidth="751.0">
+         <image>
+            <Image url="@../../Materials/ПользовательПокупка.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="68.0" fitWidth="243.0" layoutX="-1.0" layoutY="5.0">
+         <image>
+            <Image url="@../../Materials/Name.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5202ff" height="50.0" layoutX="226.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="330.0" />
+      <Label layoutX="260.0" layoutY="14.0" text="Администратор" textFill="#57dbea">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="Table_Choice_Admin" layoutX="570.0" layoutY="78.0" onAction="#ChooseTable" prefWidth="150.0" />
+      <Button fx:id="Add" layoutX="570.0" layoutY="126.0" mnemonicParsing="false" onAction="#AddtoTable" prefHeight="34.0" prefWidth="150.0" stylesheets="@../../Materials/Button.css" text="Добавить">
+         <font>
+            <Font name="Comic Sans MS Bold" size="15.0" />
+         </font></Button>
+      <Button fx:id="Delete" layoutX="570.0" layoutY="179.0" mnemonicParsing="false" onAction="#DeletefromTable" prefHeight="34.0" prefWidth="150.0" stylesheets="@../../Materials/Button.css" text="Удалить">
+         <font>
+            <Font name="Comic Sans MS Bold" size="15.0" />
+         </font></Button>
+      <Button fx:id="Change" layoutX="570.0" layoutY="232.0" mnemonicParsing="false" onAction="#ChangeinTable" prefHeight="34.0" prefWidth="150.0" stylesheets="@../../Materials/Button.css" text="Изменить">
+         <font>
+            <Font name="Comic Sans MS Bold" size="15.0" />
+         </font></Button>
+      <Button fx:id="Return" layoutX="570.0" layoutY="285.0" mnemonicParsing="false" onAction="#RecoverAction" prefHeight="34.0" prefWidth="150.0" stylesheets="@../../Materials/Button.css" text="Вернуть назад">
+         <font>
+            <Font name="Comic Sans MS Bold" size="15.0" />
+         </font></Button>
+      <TableView fx:id="TableShow" editable="true" layoutX="26.0" layoutY="79.0" prefHeight="368.0" prefWidth="530.0" />
+      <Button fx:id="Recover" layoutX="663.0" layoutY="405.0" mnemonicParsing="false" onAction="#RecoverFile" prefHeight="34.0" prefWidth="50.0" stylesheets="@../../Materials/Button.css" text="З" />
+      <Button fx:id="Dump" layoutX="589.0" layoutY="405.0" mnemonicParsing="false" onAction="#DumpFile" prefHeight="34.0" prefWidth="50.0" stylesheets="@../../Materials/Button.css" text="В">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Label layoutX="588.0" layoutY="371.0" text="Резервные файлы" textFill="#0011ff">
+         <font>
+            <Font name="Comic Sans MS Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="BackToLogin" layoutX="571.0" layoutY="22.0" mnemonicParsing="false" onAction="#BackToLogin" prefHeight="34.0" prefWidth="150.0" stylesheets="@../../Materials/Button.css" text="Выйти из аккаунта">
+         <font>
+            <Font name="Comic Sans MS Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="FUCK" layoutX="575.0" layoutY="336.0" prefHeight="34.0" prefWidth="142.0" text="ОШИБКА!!!!" textFill="RED" visible="false">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="CountryAdd" layoutX="-1.0" layoutY="5.0" prefHeight="474.0" prefWidth="742.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="480.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="742.0" />
+            <Label layoutX="158.0" layoutY="52.0" text="Добавление Страны">
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <TextField fx:id="CountryAddName" layoutX="269.0" layoutY="150.0" promptText="Введите название" />
+            <TextField fx:id="CountryAddCode" layoutX="269.0" layoutY="193.0" promptText="Вводете код" />
+            <Label layoutX="186.0" layoutY="152.0" text="Название">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="193.0" layoutY="195.0" text="Код">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="BtnAddCountry" layoutX="238.0" layoutY="265.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="210.0" stylesheets="@../../Materials/Button.css" text="Добавить">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="CityAdd" layoutX="9.0" layoutY="15.0" prefHeight="474.0" prefWidth="742.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="-9.0" layoutY="-16.0" stroke="BLACK" strokeType="INSIDE" width="751.0" />
+            <Label layoutX="158.0" layoutY="52.0" text="Добавление Города">
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <TextField fx:id="CityAddName" layoutX="269.0" layoutY="150.0" promptText="Введите название" />
+            <TextField fx:id="CityAddCountryCode" layoutX="269.0" layoutY="193.0" promptText="Вводете код" />
+            <Label layoutX="186.0" layoutY="152.0" text="Название">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="177.0" layoutY="195.0" text="Код Страны">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="BtnAddCity" layoutX="238.0" layoutY="265.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="210.0" stylesheets="@../../Materials/Button.css" text="Добавить">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="AiroportAdd" layoutX="9.0" layoutY="7.0" prefHeight="474.0" prefWidth="742.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="-9.0" layoutY="-16.0" stroke="BLACK" strokeType="INSIDE" width="751.0" />
+            <Label layoutX="125.0" layoutY="54.0" text="Добавление Айропорта">
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <TextField fx:id="AiroportNameAdd" layoutX="319.0" layoutY="119.0" promptText="Введите название" />
+            <TextField fx:id="AiroportSiteAdd" layoutX="318.0" layoutY="159.0" promptText="Вводете сайт" />
+            <Label layoutX="195.0" layoutY="121.0" text="Название">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="196.0" layoutY="161.0" text="Сайт">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="BtnAiroportAdd" layoutX="266.0" layoutY="327.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="210.0" stylesheets="@../../Materials/Button.css" text="Добавить">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Button>
+            <TextField fx:id="AiroportCityCodeAdd" layoutX="319.0" layoutY="197.0" promptText="Введите код города" />
+            <TextField fx:id="AiroportCodeAdd" layoutX="319.0" layoutY="240.0" promptText="Вводете код айропорта" />
+            <Label layoutX="196.0" layoutY="199.0" text="Код Города">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="196.0" layoutY="242.0" text="Код айропорта">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="HelperAdd" layoutX="4.0" layoutY="7.0" prefHeight="474.0" prefWidth="742.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="-4.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="751.0" />
+            <Label layoutX="125.0" layoutY="34.0" text="Добавление Сотрудника">
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <TextField fx:id="HelperFNAdd" layoutX="374.0" layoutY="104.0" promptText="Введите фамилию" />
+            <Label layoutX="195.0" layoutY="106.0" text="Фамилию">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="BtnHelperAdd" layoutX="268.0" layoutY="354.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="210.0" stylesheets="@../../Materials/Button.css" text="Добавить">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Button>
+            <TextField fx:id="HelperAidAdd" layoutX="375.0" layoutY="223.0" promptText="Введете код айропорта" />
+            <Label layoutX="199.0" layoutY="225.0" text="Код айропорта">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="HelperLNAdd" layoutX="374.0" layoutY="141.0" promptText="Введите имя" />
+            <Label layoutX="197.0" layoutY="143.0" text="Имя">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="HelperMNAdd" layoutX="374.0" layoutY="179.0" promptText="Введите отчество" />
+            <Label layoutX="198.0" layoutY="181.0" text="Отчество">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="HelperPNAdd" layoutX="374.0" layoutY="262.0" promptText="Введите номер телефона" />
+            <Label layoutX="198.0" layoutY="264.0" text="Номер телефона">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PlaneAdd" layoutX="5.0" layoutY="6.0" prefHeight="488.0" prefWidth="732.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="-4.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="751.0" />
+            <Label layoutX="142.0" layoutY="110.0" text="Добавление Самолета">
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PlaneNameAdd" layoutX="391.0" layoutY="180.0" promptText="Введите название" />
+            <Label layoutX="212.0" layoutY="182.0" text="Название">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="BtnPlaneAdd" layoutX="268.0" layoutY="284.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="210.0" stylesheets="@../../Materials/Button.css" text="Добавить">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Button>
+            <TextField fx:id="PlaneTypeAdd" layoutX="391.0" layoutY="217.0" promptText="Введите тип" />
+            <Label layoutX="214.0" layoutY="219.0" text="Тип">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="SeatAdd" layoutX="6.0" layoutY="3.0" prefHeight="469.0" prefWidth="747.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="-12.0" layoutY="-21.0" stroke="BLACK" strokeType="INSIDE" width="751.0" />
+            <Label layoutX="176.0" layoutY="31.0" text="Добавление Места">
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <TextField fx:id="SeatClassAdd" layoutX="374.0" layoutY="104.0" promptText="Введите Класс" />
+            <Label layoutX="195.0" layoutY="106.0" text="Класс">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="BtnSeatAdd" layoutX="268.0" layoutY="354.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="210.0" stylesheets="@../../Materials/Button.css" text="Добавить">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Button>
+            <TextField fx:id="SeatBusyAdd" layoutX="375.0" layoutY="223.0" promptText="Занятость(true|false)" />
+            <Label layoutX="199.0" layoutY="225.0" text="Занятость">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="SeatCCountAdd" layoutX="374.0" layoutY="141.0" promptText="Введите коэффицент" />
+            <Label layoutX="197.0" layoutY="143.0" text="Коэф.Места">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="SeatNAdd" layoutX="374.0" layoutY="179.0" promptText="Номер места" />
+            <Label layoutX="198.0" layoutY="181.0" text="Номер места">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="SPidAdd" layoutX="374.0" layoutY="262.0" promptText="Введите код" />
+            <Label layoutX="198.0" layoutY="264.0" text="Код самолета">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PassenAdd" layoutX="4.0" layoutY="1.0" prefHeight="474.0" prefWidth="742.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="489.0" layoutX="-4.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="751.0" />
+            <Label layoutX="125.0" layoutY="34.0" text="Добавление Пассажира">
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PassenFNAdd" layoutX="374.0" layoutY="104.0" promptText="Введите фамилию" />
+            <Label layoutX="195.0" layoutY="106.0" text="Фамилию">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="BtnPassenAdd" layoutX="268.0" layoutY="354.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="210.0" stylesheets="@../../Materials/Button.css" text="Добавить">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Button>
+            <TextField fx:id="PassenPNAdd" layoutX="375.0" layoutY="223.0" promptText="Введете паспорт номер" />
+            <Label layoutX="199.0" layoutY="225.0" text="Паспорт номер">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PassenLNAdd" layoutX="374.0" layoutY="141.0" promptText="Введите имя" />
+            <Label layoutX="197.0" layoutY="143.0" text="Имя">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PassenMNAdd" layoutX="374.0" layoutY="179.0" promptText="Введите отчество" />
+            <Label layoutX="198.0" layoutY="181.0" text="Отчество">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PassenPhNAdd" layoutX="374.0" layoutY="293.0" promptText="Введите номер телефона" />
+            <Label layoutX="198.0" layoutY="295.0" text="Номер телефона">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PassenPSAdd" layoutX="375.0" layoutY="257.0" promptText="Введете Паспорт серию" />
+            <Label layoutX="199.0" layoutY="259.0" text="Паспорт серия">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PaswAdd" layoutX="9.0" layoutY="15.0" prefHeight="474.0" prefWidth="742.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="480.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="742.0" />
+            <Label layoutX="96.0" layoutY="51.0" text="Добавление пользователя">
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PaswLogAdd" layoutX="307.0" layoutY="152.0" promptText="Введите логин" />
+            <TextField fx:id="PaswPaswAdd" layoutX="307.0" layoutY="221.0" promptText="Вводете пароль" />
+            <Label layoutX="230.0" layoutY="154.0" text="Логин">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="231.0" layoutY="223.0" text="Пароль">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="BtnPaswAdd" layoutX="238.0" layoutY="265.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="210.0" stylesheets="@../../Materials/Button.css" text="Добавить">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Button>
+            <TextField fx:id="PaswRolAdd" layoutX="307.0" layoutY="189.0" promptText="Вводете роль" />
+            <Label layoutX="231.0" layoutY="191.0" text="Роль">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="FlightAdd" layoutY="10.0" prefHeight="462.0" prefWidth="730.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="474.0" layoutY="-6.0" stroke="BLACK" strokeType="INSIDE" width="732.0" />
+            <TextField fx:id="FBasePrice" layoutX="176.0" layoutY="170.0" promptText="Введите базовую цену" />
+            <TextField fx:id="FAT" layoutX="176.0" layoutY="239.0" promptText="Время приоета" />
+            <Label layoutX="64.0" layoutY="178.0" text="Базовая цена">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="58.0" layoutY="241.0" text="Время прилета">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="BtnFlightAdd" layoutX="252.0" layoutY="347.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="210.0" stylesheets="@../../Materials/Button.css" text="Добавить">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Button>
+            <TextField fx:id="FDT" layoutX="176.0" layoutY="207.0" promptText="Время вылета" />
+            <Label layoutX="62.0" layoutY="209.0" text="Время вылета">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="117.0" layoutY="53.0" text="Добавление перелета">
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <TextField fx:id="FDAId" layoutX="524.0" layoutY="168.0" promptText="Введите код аэропорта" />
+            <TextField fx:id="FPI" layoutX="524.0" layoutY="239.0" promptText="Введите код самолета" />
+            <Label layoutX="348.0" layoutY="176.0" text="Код аэропорта вылета">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="348.0" layoutY="241.0" text="Код самолета">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="FAAId" layoutX="524.0" layoutY="205.0" promptText="Введите код аэропорт" />
+            <Label layoutX="348.0" layoutY="209.0" text="Код аэропорта приоета">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="58.0" layoutY="330.0" text="*Формат записи времени&#10;2021-12-28 10:00:000" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

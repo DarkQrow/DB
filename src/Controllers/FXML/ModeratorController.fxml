@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ModeratorControlController">
+   <children>
+      <ImageView fitHeight="450.0" fitWidth="720.0">
+         <image>
+            <Image url="@../../Materials/ПользовательПокупка.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="Fly_Table" layoutX="42.0" layoutY="57.0" prefHeight="354.0" prefWidth="530.0">
+        <columns>
+          <TableColumn prefWidth="94.4000244140625" text="Покупатель" />
+          <TableColumn prefWidth="92.0" text="Билет" />
+            <TableColumn prefWidth="138.39996337890625" text="Дата бронирования" />
+            <TableColumn prefWidth="75.0" text="Место" />
+            <TableColumn prefWidth="128.00002441406252" text="Стоимость" />
+        </columns>
+      </TableView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5622ff" height="36.0" layoutX="186.0" layoutY="11.0" stroke="BLACK" strokeType="INSIDE" width="348.0" />
+      <Label layoutX="193.0" prefHeight="50.0" prefWidth="338.0" text="Редактирование перелетов" textFill="#00e1fa">
+         <font>
+            <Font name="Comic Sans MS Bold" size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="MSave_btn" layoutX="598.0" layoutY="349.0" mnemonicParsing="false" onAction="#SaveFlight" prefHeight="62.0" prefWidth="100.0" stylesheets="@../../Materials/Button.css" text="Сохранить">
+         <font>
+            <Font name="Comic Sans MS Bold" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="50.0" fitWidth="200.0">
+         <image>
+            <Image url="@../../Materials/Name.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="BackToLogin" layoutX="578.0" layoutY="11.0" mnemonicParsing="false" onAction="#BackToLogin" prefHeight="36.0" prefWidth="131.0" stylesheets="@../../Materials/Button.css" text="Выйти из аккаунта">
+         <font>
+            <Font name="Comic Sans MS Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
